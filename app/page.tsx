@@ -22,17 +22,17 @@ export default function Home() {
           </SectionWrapper>
 
           {/* Experience Section */}
-          <SectionWrapper className="" delay={0.3}>
+          <SectionWrapper className="" delay={0.1}>
             <ExperienceSection />
           </SectionWrapper>
 
           {/* Projects Section */}
-          <SectionWrapper className="" delay={0.1}>
+          <SectionWrapper className="" delay={0.2}>
             <ProjectsSection />
           </SectionWrapper>
 
           {/* Skills Section */}
-          <SectionWrapper className="" delay={0.2}>
+          <SectionWrapper className="" delay={0.3}>
             <SkillsSection />
           </SectionWrapper>
 

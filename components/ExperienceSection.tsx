@@ -1,9 +1,52 @@
 import { useRef } from "react";
 import Image from "next/image";
-import { Card } from "./ui/card";
-import { Zap } from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import { motion, useInView } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
+import Link from "next/link";
+
+export function SalesBlinkHoverCard() {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild className="px-1 py-0">
+        <span className="text-primary underline underline-offset-2 cursor-pointer">
+          SalesBlink
+        </span>
+      </HoverCardTrigger>
+      <HoverCardContent>
+        <div className="flex flex-col gap-4">
+          <div className="flex gap-2 items-center">
+            <div className="relative h-10 w-12">
+              <Image
+                src={"/salesblink.png"}
+                alt="salesblink image"
+                fill
+                className="rounded-md object-cover"
+              />
+            </div>
+            <div className="space-y-1">
+              <h4 className="text-sm font-semibold">@salesblink</h4>
+              <Link
+                className="text-sm text-muted-foreground"
+                href={"https://salesblink.io"}
+                target="_blank"
+              >
+                https://salesblink.io
+              </Link>
+            </div>
+          </div>
+          <p className="text-sm">
+            AI powered cold email outreach automation platform.
+          </p>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  );
+}
 
 export function ExperienceSection() {
   const experienceRef = useRef(null);
@@ -13,10 +56,34 @@ export function ExperienceSection() {
   });
 
   const responsibilities = [
-    "Developed functionality to create workspaces for accounts, allowing each workspace to store and manage its own separate data.",
-    "Implemented a comprehensive White Labeling solution, enabling users to fully rebrand the platform.",
-    "Developed a mobile application that allows users to access, manage, and send emails directly from their inbox.",
-    "Developed automated system for fetching, storing, and syncing data from Google Sheets to databases, running every 24 hours to detect and integrate any new data.",
+    <div className="text-muted-foreground" key="r1">
+      Engineered a{" "}
+      <span className="text-foreground font-medium">
+        multi-tenant voice agent
+      </span>{" "}
+      platform to enhance user engagement and drive e-commerce conversions.
+    </div>,
+    <div className="text-muted-foreground" key="r2">
+      Built a{" "}
+      <span className="text-foreground font-medium">Google Sheets add-on</span>{" "}
+      that streamlines email verification, improving user productivity and data
+      reliability.
+    </div>,
+    <div className="text-muted-foreground" key="r3">
+      Worked on <SalesBlinkHoverCard /> including implementing{" "}
+      <span className="text-foreground font-medium">Workspace</span>{" "}
+      functionality for account-level data separation and a comprehensive{" "}
+      <span className="text-foreground font-medium">White Labeling</span>{" "}
+      solution for platform rebranding.
+    </div>,
+    <div className="text-muted-foreground" key="r4">
+      Developed a{" "}
+      <span className="text-foreground font-medium">
+        cross platform mobile application
+      </span>{" "}
+      for SalesBlink that allows users to access, manage, and send emails
+      directly from their inbox.
+    </div>,
   ];
 
   return (
@@ -36,48 +103,36 @@ export function ExperienceSection() {
       </motion.h2>
 
       <motion.div variants={fadeIn}>
-        <Card>
-          <div className="h-full p-6 transition-all duration-300">
-            <div className="flex flex-col justify-between gap-4 mb-4">
-              <div className="flex items-center gap-4">
-                <Image
-                  src="/futureblink.webp"
-                  alt="Company Logo"
-                  height={48}
-                  width={48}
-                  className="object-cover rounded-md"
-                />
-                <div>
-                  <h3 className="text-xl font-semibold">FutureBlink</h3>
-                  <p className="text-muted-foreground">Software Engineer</p>
-                </div>
-              </div>
-              <div className="flex rounded-sm items-center gap-2 px-3 py-1 text-sm w-max bg-primary text-primary-foreground">
-                <Zap className="h-3.5 w-3.5" />
-                <span>June 2024 - Present</span>
+        <div className="grid grid-cols-1 gap-4 md:gap-6 py-12 first:pt-0 last:pb-0 md:grid-cols-[2fr,1fr,4fr]">
+          <div className="flex gap-4 h-max items-center">
+            <div className="h-10 w-10 relative flex-shrink-0">
+              <Image
+                src={"/futureblink.webp"}
+                alt="image"
+                fill
+                priority={true}
+                className="object-cover rounded-md"
+              />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold">FutureBlink</h3>
+              <p className="text-sm text-muted-foreground">
+                June 2024 - Present
+              </p>
+            </div>
+          </div>
+          <div />
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold">
+                Junior Software Engineer
+              </h4>
+              <div className="space-y-3 !max-w-2xl md:max-w-full">
+                {responsibilities.map((task) => task)}
               </div>
             </div>
-            <ul className="space-y-3 text-sm max-w-2xl">
-              {responsibilities.map((responsibility, index) => (
-                <motion.li
-                  key={index}
-                  className="flex items-center gap-4"
-                  variants={{
-                    hidden: { opacity: 0, x: -10 },
-                    visible: {
-                      opacity: 1,
-                      x: 0,
-                      transition: { delay: 0.1 + index * 0.1 },
-                    },
-                  }}
-                >
-                  <div className="h-1.5 w-1.5 bg-primary shrink-0"></div>
-                  <span>{responsibility}</span>
-                </motion.li>
-              ))}
-            </ul>
           </div>
-        </Card>
+        </div>
       </motion.div>
     </motion.section>
   );
