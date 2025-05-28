@@ -1,24 +1,20 @@
+import Link from "next/link";
 import { useRef } from "react";
 import Image from "next/image";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { motion, useInView } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/utils";
-import Link from "next/link";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
-export function SalesBlinkHoverCard() {
+export function SalesBlinkPopoverCard() {
   return (
-    <HoverCard>
-      <HoverCardTrigger asChild className="px-1 py-0">
+    <Popover>
+      <PopoverTrigger asChild className="px-1 py-0">
         <span className="text-primary underline underline-offset-2 cursor-pointer">
           SalesBlink
         </span>
-      </HoverCardTrigger>
-      <HoverCardContent>
-        <div className="flex flex-col gap-4">
+      </PopoverTrigger>
+      <PopoverContent>
+        <div className="flex flex-col gap-2">
           <div className="flex gap-2 items-center">
             <div className="relative h-10 w-12">
               <Image
@@ -43,8 +39,8 @@ export function SalesBlinkHoverCard() {
             AI powered cold email outreach automation platform.
           </p>
         </div>
-      </HoverCardContent>
-    </HoverCard>
+      </PopoverContent>
+    </Popover>
   );
 }
 
@@ -70,7 +66,7 @@ export function ExperienceSection() {
       reliability.
     </div>,
     <div className="text-muted-foreground" key="r3">
-      Worked on <SalesBlinkHoverCard /> including implementing{" "}
+      Worked on <SalesBlinkPopoverCard /> including implementing{" "}
       <span className="text-foreground font-medium">Workspace</span>{" "}
       functionality for account-level data separation and a comprehensive{" "}
       <span className="text-foreground font-medium">White Labeling</span>{" "}
@@ -127,7 +123,7 @@ export function ExperienceSection() {
               <h4 className="text-lg font-semibold">
                 Junior Software Engineer
               </h4>
-              <div className="space-y-3 !max-w-2xl md:max-w-full">
+              <div className="space-y-3">
                 {responsibilities.map((task) => task)}
               </div>
             </div>
