@@ -46,16 +46,13 @@ export function SkillsSection() {
   return (
     <motion.section
       id="skills"
-      className="px-4 md:px-8 py-8 border-l border-r border-dashed container"
+      className="px-4 md:px-8 py-8 border-l border-r border-dashed container section-shadow"
       ref={skillsRef}
       initial="hidden"
       animate={skillsInView ? "visible" : "hidden"}
       variants={staggerContainer}
     >
-      <motion.h2
-        className="text-2xl md:text-3xl font-semibold mb-8"
-        variants={fadeIn}
-      >
+      <motion.h2 className="mb-8" variants={fadeIn}>
         Skills
       </motion.h2>
 

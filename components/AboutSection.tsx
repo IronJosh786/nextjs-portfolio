@@ -18,7 +18,7 @@ export function AboutSection() {
       variants={fadeIn}
     >
       <motion.h1
-        className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
+        className="mb-6"
         variants={{
           hidden: { opacity: 0, y: 20 },
           visible: {
@@ -33,13 +33,13 @@ export function AboutSection() {
         Software Engineer
       </motion.h1>
       <motion.p
-        className="max-w-2xl text-lg md:text-xl text-muted-foreground mb-8"
+        className="mb-8 text-lg"
         variants={{
           hidden: { opacity: 0, y: 20 },
           visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.7, delay: 0.1, ease: "easeOut" },
+            transition: { duration: 0.7, delay: 0.2, ease: "easeOut" },
           },
         }}
       >

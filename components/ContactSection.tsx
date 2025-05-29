@@ -20,7 +20,7 @@ export function ContactSection() {
     >
       <Card className="p-8 md:p-12">
         <motion.h2
-          className="text-2xl md:text-3xl font-semibold mb-4"
+          className="mb-4"
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: {
@@ -33,7 +33,7 @@ export function ContactSection() {
           Let&apos;s Connect
         </motion.h2>
         <motion.p
-          className="text-muted-foreground max-w-2xl mb-8"
+          className="mb-8"
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: {

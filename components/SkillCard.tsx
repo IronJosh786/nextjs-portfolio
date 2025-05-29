@@ -28,7 +28,7 @@ export function SkillCard({
           <div className="p-3 rounded-md bg-primary text-primary-foreground">
             <Icon className="h-6 w-6" />
           </div>
-          <h3 className="text-xl font-semibold">{title}</h3>
+          <h4>{title}</h4>
         </div>
         <ul className="space-y-3 text-sm">
           {skills.map((skill: string, index: number) => (

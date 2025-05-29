@@ -13,8 +13,8 @@ export function Footer() {
       <div className="px-4 md:px-8 py-8 border-l border-r border-dashed container">
         <div className="flex flex-col items-center sm:flex-row justify-between sm:items-center gap-8">
           <div className="text-center sm:text-start">
-            <h3 className="text-xl font-semibold tracking-tight">faizan</h3>
-            <p className="text-muted-foreground mt-2 text-sm">
+            <h4>faizan</h4>
+            <p className="mt-2 text-sm">
               © {new Date().getFullYear()} All rights reserved.
             </p>
           </div>

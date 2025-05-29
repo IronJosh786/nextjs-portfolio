@@ -18,14 +18,15 @@ export function SalesBlinkPopoverCard() {
           <div className="flex gap-2 items-center">
             <div className="relative h-10 w-12">
               <Image
-                src={"/salesblink.png"}
+                src={"/salesblink.webp"}
                 alt="salesblink image"
                 fill
+                priority={true}
                 className="rounded-md object-cover"
               />
             </div>
-            <div className="space-y-1">
-              <h4 className="text-sm font-semibold">@salesblink</h4>
+            <div>
+              <h4 className="text-sm">@salesblink</h4>
               <Link
                 className="text-sm text-muted-foreground"
                 href={"https://salesblink.io"}
@@ -89,12 +90,9 @@ export function ExperienceSection() {
       initial="hidden"
       animate={experienceInView ? "visible" : "hidden"}
       variants={staggerContainer}
-      className="px-4 md:px-8 py-8 border-l border-r border-dashed container lg:col-span-2"
+      className="px-4 md:px-8 py-8 border-l border-r border-dashed container lg:col-span-2 section-shadow"
     >
-      <motion.h2
-        className="text-2xl md:text-3xl font-semibold mb-8"
-        variants={fadeIn}
-      >
+      <motion.h2 className="mb-8" variants={fadeIn}>
         Work Experience
       </motion.h2>
 
@@ -111,18 +109,14 @@ export function ExperienceSection() {
               />
             </div>
             <div>
-              <h3 className="text-xl font-bold">FutureBlink</h3>
-              <p className="text-sm text-muted-foreground">
-                June 2024 - Present
-              </p>
+              <h4>FutureBlink</h4>
+              <p className="text-sm">June 2024 - Present</p>
             </div>
           </div>
           <div />
           <div className="space-y-6">
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold">
-                Junior Software Engineer
-              </h4>
+              <h4>Junior Software Engineer</h4>
               <div className="space-y-3">
                 {responsibilities.map((task) => task)}
               </div>

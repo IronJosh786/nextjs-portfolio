@@ -1,50 +1,55 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { fadeIn } from "@/lib/utils";
+import { cn, fadeIn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Code, SquareArrowOutUpRight } from "lucide-react";
 
 export function ProjectCard({
   title,
   description,
   image,
   className = "",
+  repo,
+  preview,
 }: {
   title: string;
   description: string;
   image: string;
   className: string;
+  repo: string;
+  preview: string;
 }) {
-  const isFullWidth = className.includes("md:col-span-2");
-
   return (
-    <motion.div className={`group ${className}`} variants={fadeIn}>
-      <Card
-        className={`relative overflow-hidden transition-all duration-300 ${
-          isFullWidth ? "aspect-[4/3] md:aspect-[8/3]" : "aspect-[4/3]"
-        }`}
-      >
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-
-        <div className="absolute inset-0 flex flex-col justify-end p-6 bg-transparent opacity-0 group-hover:opacity-100 group-hover:backdrop-blur-lg transition-all duration-300">
-          <div className="transform transition-transform duration-300 translate-y-4 group-hover:translate-y-0">
-            <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
-            <p className="mb-4 text-white/90 text-sm">{description}</p>
-            <div className="flex items-center gap-2 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-              <Button size="sm" variant="outline">
-                Code <Github className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="sm" variant="outline">
-                Preview <ExternalLink className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+    <motion.div variants={fadeIn} className={cn("group", className)}>
+      <Card className={"flex h-full flex-col p-2"}>
+        <div className="flex h-full flex-col rounded-lg">
+          <Image
+            alt={title}
+            loading="lazy"
+            width="300"
+            height="300"
+            decoding="async"
+            data-nimg="1"
+            className="w-full rounded-lg object-cover transition-all duration-300"
+            src={image}
+          />
+          <div className="my-4 w-full flex flex-col flex-grow gap-4 text-balance px-2">
+            <h4>{title}</h4>
+            <p className="flex-grow m-0">{description}</p>
+          </div>
+          <div className="flex gap-2 px-2 mb-2">
+            <Button size="sm" variant="outline" asChild>
+              <Link href={repo} target="_blank">
+                Code <Code className="h-4 w-4" />
+              </Link>
+            </Button>
+            <Button size="sm" variant="outline" asChild>
+              <Link href={preview} target="_blank">
+                Preview <SquareArrowOutUpRight className="h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </Card>
