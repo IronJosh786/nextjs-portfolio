@@ -1,5 +1,7 @@
+import { useRef } from "react";
 import { Card } from "./ui/card";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { fadeIn } from "@/lib/utils";
 
 export function SkillCard({
   icon: Icon,
@@ -12,18 +14,25 @@ export function SkillCard({
   skills: string[];
   delay: number;
 }) {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
+  // const fadeIn = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { duration: 0.6, ease: "easeOut" },
+  //   },
+  // };
+  const skillCardRef = useRef(null);
+  const isInView = useInView(skillCardRef, { once: true, amount: 0.1 });
   return (
-    <motion.div variants={fadeIn} className="col-span-1 h-full w-full">
-      <Card className="h-full p-6 transition-all duration-300 group">
+    <motion.div
+      ref={skillCardRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={fadeIn}
+      className="col-span-1 h-full w-full"
+    >
+      <Card className="h-full p-6">
         <div className="flex items-center gap-4 mb-6">
           <div className="p-3 rounded-md bg-primary text-primary-foreground">
             <Icon className="h-6 w-6" />

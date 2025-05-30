@@ -12,17 +12,9 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import { linkVariants } from "@/lib/utils";
 
 function MobileDrawer() {
-  const linkVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: 0.1 * (i + 1) },
-    }),
-  };
-
   const links = [
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },

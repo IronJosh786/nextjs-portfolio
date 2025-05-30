@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function ContactSection() {
   const contactRef = useRef(null);
-  const contactInView = useInView(contactRef, { once: true, amount: 0.3 });
+  const contactInView = useInView(contactRef, { once: true, amount: 0.1 });
 
   return (
     <motion.section
@@ -19,43 +19,15 @@ export function ContactSection() {
       variants={fadeIn}
     >
       <Card className="p-8 md:p-12">
-        <motion.h2
-          className="mb-4"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, ease: "easeOut" },
-            },
-          }}
-        >
-          Let&apos;s Connect
+        <motion.h2 className="mb-4" variants={fadeIn}>
+          Let&apos;s build something great!
         </motion.h2>
-        <motion.p
-          className="mb-8"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, delay: 0.1, ease: "easeOut" },
-            },
-          }}
-        >
-          Have a project in mind? I&apos;m currently available for freelance
-          work. Let&apos;s build something amazing together.
+        <motion.p className="mb-8" variants={fadeIn}>
+          I&apos;m always open to new opportunities, collaborations, and
+          connections. Feel free to reach out to ask a question or share your
+          project idea.
         </motion.p>
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { duration: 0.5, delay: 0.2, ease: "easeOut" },
-            },
-          }}
-        >
+        <motion.div variants={fadeIn}>
           <Button asChild>
             <Link target="_blank" href={"mailto:faizanejazshaikh@gmail.com"}>
               Get in Touch

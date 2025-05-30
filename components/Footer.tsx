@@ -8,7 +8,7 @@ export function Footer() {
       className="container-padding"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 0.5 }}
+      transition={{ delay: 0.5, duration: 0.2 }}
     >
       <div className="px-4 md:px-8 py-8 border-l border-r border-dashed container">
         <div className="flex flex-col items-center sm:flex-row justify-between sm:items-center gap-8">

@@ -7,15 +7,19 @@ import { headerVariants } from "@/lib/utils";
 export function Header() {
   return (
     <motion.header
-      className="sticky top-0 z-10 backdrop-blur-md border-b border-dashed container-padding"
+      className="sticky top-0 z-10 bg-background !opacity-95 border-b border-dashed container-padding"
       initial="hidden"
       animate="visible"
       variants={headerVariants}
     >
       <div className="px-4 md:px-8 flex h-16 items-center justify-between border-l border-r border-dashed container">
-        <Link href="/" className="text-xl font-semibold tracking-tight">
+        <motion.h4
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+        >
           faizan
-        </Link>
+        </motion.h4>
         <nav>
           <div className="flex gap-4 md:hidden">
             <motion.div

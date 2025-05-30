@@ -11,39 +11,37 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 
 export default function Home() {
   return (
-    <div data-vaul-drawer-wrapper="">
-      <div className="relative min-h-screen flex flex-col bg-background">
-        <Header />
+    <div className="relative min-h-screen flex flex-col bg-background">
+      <Header />
 
-        <main className="flex-1">
-          {/* About Section */}
-          <SectionWrapper className="" delay={0}>
-            <AboutSection />
-          </SectionWrapper>
+      <main className="flex-1">
+        {/* About Section */}
+        <SectionWrapper className="" delay={0}>
+          <AboutSection />
+        </SectionWrapper>
 
-          {/* Experience Section */}
-          <SectionWrapper className="" delay={0.1}>
-            <ExperienceSection />
-          </SectionWrapper>
+        {/* Experience Section */}
+        <SectionWrapper className="" delay={0.1}>
+          <ExperienceSection />
+        </SectionWrapper>
 
-          {/* Projects Section */}
-          <SectionWrapper className="" delay={0.2}>
-            <ProjectsSection />
-          </SectionWrapper>
+        {/* Projects Section */}
+        <SectionWrapper className="" delay={0.2}>
+          <ProjectsSection />
+        </SectionWrapper>
 
-          {/* Skills Section */}
-          <SectionWrapper className="" delay={0.3}>
-            <SkillsSection />
-          </SectionWrapper>
+        {/* Skills Section */}
+        <SectionWrapper className="" delay={0.3}>
+          <SkillsSection />
+        </SectionWrapper>
 
-          {/* Contact Section */}
-          <SectionWrapper className="" delay={0.4}>
-            <ContactSection />
-          </SectionWrapper>
-        </main>
+        {/* Contact Section */}
+        <SectionWrapper className="" delay={0.4}>
+          <ContactSection />
+        </SectionWrapper>
+      </main>
 
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

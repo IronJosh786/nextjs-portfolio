@@ -10,19 +10,18 @@ export const fadeIn = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
   exit: {
     opacity: 0,
     y: -10,
-    transition: { duration: 0.2, ease: "easeIn" },
+    transition: { duration: 0.5, ease: "easeIn" },
   },
 };
 
 export const headerVariants = {
-  hidden: { y: -10, opacity: 0 },
+  hidden: { opacity: 0 },
   visible: {
-    y: 0,
     opacity: 1,
     transition: {
       type: "spring",
@@ -41,4 +40,13 @@ export const staggerContainer = {
       delayChildren: 0.2,
     },
   },
+};
+
+export const linkVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.1 * (i + 1) },
+  }),
 };
