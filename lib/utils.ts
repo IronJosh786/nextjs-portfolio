@@ -6,16 +6,16 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const fadeIn = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
   exit: {
     opacity: 0,
-    y: -10,
-    transition: { duration: 0.5, ease: "easeIn" },
+    y: -20,
+    transition: { duration: 0.6, ease: "easeIn" },
   },
 };
 
