@@ -11,6 +11,15 @@ export function ProjectsSection() {
       repo: "https://github.com/IronJosh786/multiplayer-quiz-game",
       preview: "https://quiz.faizanejaz.com/",
       className: "col-span-1 md:col-span-2 lg:col-span-1",
+      techStack: [
+        "WebSockets",
+        "Express.js",
+        "Postgres",
+        "Prisma",
+        "React.js",
+        "Cloudflare Workers",
+        "Typescript",
+      ],
     },
     {
       title: "Social Sphere",
@@ -20,6 +29,14 @@ export function ProjectsSection() {
       repo: "https://github.com/IronJosh786/Social-Media-App",
       preview: "https://social-sphere-two.vercel.app/",
       className: "col-span-1",
+      techStack: [
+        "MongoDB",
+        "Mongoose",
+        "Express.js",
+        "React.js",
+        "Cloudinary",
+        "JavaScript",
+      ],
     },
     {
       title: "Wings In Progress",
@@ -29,6 +46,14 @@ export function ProjectsSection() {
       repo: "https://github.com/IronJosh786/WingsInProgress",
       preview: "https://wings-in-progress.vercel.app/",
       className: "col-span-1",
+      techStack: [
+        "Next.js",
+        "MongoDB",
+        "Mongoose",
+        "React.js",
+        "React Query",
+        "Typescript",
+      ],
     },
   ];
   return (

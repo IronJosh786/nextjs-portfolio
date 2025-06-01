@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Badge } from "./ui/badge";
 import { BlurFade } from "./blur-fade";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
-export function SalesBlinkPopoverCard() {
+function SalesBlinkPopoverCard() {
   return (
     <Popover>
       <PopoverTrigger asChild className="px-1 py-0">
@@ -74,7 +75,18 @@ export function ExperienceSection() {
       directly from their inbox.
     </div>,
   ];
-
+  const techStack = [
+    "JavaScript",
+    "Next.js",
+    "React.js",
+    "Expo",
+    "Express.js",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
+    "Langchain",
+    "Pinecone",
+  ];
   return (
     <section id="experience">
       <BlurFade delay={0.075} inView>
@@ -104,6 +116,13 @@ export function ExperienceSection() {
                 <h4>Junior Software Engineer</h4>
                 <div className="space-y-3">
                   {responsibilities.map((task) => task)}
+                </div>
+                <div className="flex gap-2 flex-wrap">
+                  {techStack.map((tech) => (
+                    <Badge variant={"secondary"} key={tech}>
+                      {tech}
+                    </Badge>
+                  ))}
                 </div>
               </div>
             </div>
