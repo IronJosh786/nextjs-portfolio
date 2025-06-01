@@ -1,12 +1,7 @@
-import { useRef } from "react";
+import { BlurFade } from "./blur-fade";
 import { ProjectCard } from "./ProjectCard";
-import { motion, useInView } from "framer-motion";
-import { fadeIn, staggerContainer } from "@/lib/utils";
 
 export function ProjectsSection() {
-  const projectRef = useRef(null);
-  const projectInView = useInView(projectRef, { once: true, amount: 0.1 });
-
   const projects = [
     {
       title: "Quiz Master",
@@ -36,25 +31,24 @@ export function ProjectsSection() {
       className: "col-span-1",
     },
   ];
-
   return (
-    <motion.section
-      id="projects"
-      className="px-4 md:px-8 py-8 border-l border-r border-dashed container"
-      ref={projectRef}
-      initial="hidden"
-      animate={projectInView ? "visible" : "hidden"}
-      variants={staggerContainer}
-    >
-      <motion.h2 className="mb-8" variants={fadeIn}>
-        Projects
-      </motion.h2>
+    <section id="projects">
+      <BlurFade delay={0.075} inView>
+        <h2 className="mb-8">Projects</h2>
+      </BlurFade>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <BlurFade
+            delay={0.075 * (index + 2)}
+            inView
+            key={index}
+            className={project.className}
+          >
+            <ProjectCard {...project} />
+          </BlurFade>
         ))}
       </div>
-    </motion.section>
+    </section>
   );
 }

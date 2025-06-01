@@ -16,27 +16,27 @@ export default function Home() {
 
       <main className="flex-1">
         {/* About Section */}
-        <SectionWrapper className="" delay={0}>
+        <SectionWrapper className="py-12">
           <AboutSection />
         </SectionWrapper>
 
         {/* Experience Section */}
-        <SectionWrapper className="" delay={0.1}>
+        <SectionWrapper className="lg:col-span-2 section-shadow">
           <ExperienceSection />
         </SectionWrapper>
 
         {/* Projects Section */}
-        <SectionWrapper className="" delay={0.2}>
+        <SectionWrapper>
           <ProjectsSection />
         </SectionWrapper>
 
         {/* Skills Section */}
-        <SectionWrapper className="" delay={0.3}>
+        <SectionWrapper className="section-shadow">
           <SkillsSection />
         </SectionWrapper>
 
         {/* Contact Section */}
-        <SectionWrapper className="" delay={0.4}>
+        <SectionWrapper>
           <ContactSection />
         </SectionWrapper>
       </main>

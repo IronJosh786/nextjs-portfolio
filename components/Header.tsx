@@ -1,113 +1,54 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
-import MobileDrawer from "./mobile-drawer";
+import { BlurFade } from "./blur-fade";
 import { ModeToggle } from "./mode-toggle";
-import { headerVariants } from "@/lib/utils";
+import MobileDrawer from "./mobile-drawer";
+
+const navLinks = [
+  { href: "#about", text: "About" },
+  { href: "#experience", text: "Experience" },
+  { href: "#projects", text: "Projects" },
+  { href: "#skills", text: "Skills" },
+  { href: "#contact", text: "Contact" },
+];
 
 export function Header() {
   return (
-    <motion.header
-      className="sticky top-0 z-10 bg-background !opacity-95 border-b border-dashed container-padding"
-      initial="hidden"
-      animate="visible"
-      variants={headerVariants}
-    >
-      <div className="px-4 md:px-8 flex h-16 items-center justify-between border-l border-r border-dashed container">
-        <motion.h4
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.1 }}
-        >
-          faizan
-        </motion.h4>
+    <header className="sticky top-0 z-10 bg-background !opacity-95 border-b border-dashed container-padding">
+      <div className="px-6 lg:px-8 flex h-16 items-center justify-between border-l border-r border-dashed container">
+        <BlurFade delay={0.075}>
+          <h4>faizan</h4>
+        </BlurFade>
+
         <nav>
+          {/* Mobile Navigation */}
           <div className="flex gap-4 md:hidden">
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-            >
+            <BlurFade delay={0.15}>
               <ModeToggle />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            </BlurFade>
+            <BlurFade delay={0.225}>
               <MobileDrawer />
-            </motion.div>
+            </BlurFade>
           </div>
+
+          {/* Desktop Navigation */}
           <div className="hidden md:flex gap-4 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              <Link
-                href="#about"
-                className="transition-colors hover:text-primary"
-              >
-                About
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <Link
-                href="#experience"
-                className="transition-colors hover:text-primary"
-              >
-                Experience
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.25 }}
-            >
-              <Link
-                href="#projects"
-                className="transition-colors hover:text-primary"
-              >
-                Projects
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              <Link
-                href="#skills"
-                className="transition-colors hover:text-primary"
-              >
-                Skills
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.35 }}
-            >
-              <Link
-                href="#contact"
-                className="transition-colors hover:text-primary"
-              >
-                Contact
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-            >
+            {navLinks.map((link, index) => (
+              <BlurFade delay={0.075 * (index + 2)} key={link.href}>
+                <Link
+                  href={link.href}
+                  className="transition-colors hover:text-primary"
+                >
+                  {link.text}
+                </Link>
+              </BlurFade>
+            ))}
+
+            <BlurFade delay={0.45}>
               <ModeToggle />
-            </motion.div>
+            </BlurFade>
           </div>
         </nav>
       </div>
-    </motion.header>
+    </header>
   );
 }

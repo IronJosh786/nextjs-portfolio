@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { useRef } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { fadeIn, staggerContainer } from "@/lib/utils";
+import { BlurFade } from "./blur-fade";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 export function SalesBlinkPopoverCard() {
@@ -46,12 +44,6 @@ export function SalesBlinkPopoverCard() {
 }
 
 export function ExperienceSection() {
-  const experienceRef = useRef(null);
-  const experienceInView = useInView(experienceRef, {
-    once: true,
-    amount: 0.1,
-  });
-
   const responsibilities = [
     <div className="text-muted-foreground" key="r1">
       Engineered a{" "}
@@ -84,46 +76,40 @@ export function ExperienceSection() {
   ];
 
   return (
-    <motion.section
-      id="experience"
-      ref={experienceRef}
-      initial="hidden"
-      animate={experienceInView ? "visible" : "hidden"}
-      variants={staggerContainer}
-      className="px-4 md:px-8 py-8 border-l border-r border-dashed container lg:col-span-2 section-shadow"
-    >
-      <motion.h2 className="mb-8" variants={fadeIn}>
-        Work Experience
-      </motion.h2>
-
-      <motion.div variants={fadeIn}>
-        <div className="grid grid-cols-1 gap-4 md:gap-6 py-12 first:pt-0 last:pb-0 md:grid-cols-[2fr,1fr,4fr]">
-          <div className="flex gap-4 h-max items-center">
-            <div className="h-10 w-10 relative flex-shrink-0">
-              <Image
-                src={"/futureblink.webp"}
-                alt="image"
-                fill
-                priority={true}
-                className="object-cover rounded-md"
-              />
+    <section id="experience">
+      <BlurFade delay={0.075} inView>
+        <h2 className="mb-8">Work Experience</h2>
+      </BlurFade>
+      <BlurFade delay={0.15} inView>
+        <div>
+          <div className="grid grid-cols-1 gap-4 md:gap-6 py-12 first:pt-0 last:pb-0 md:grid-cols-[2fr,1fr,4fr]">
+            <div className="flex gap-4 h-max items-center">
+              <div className="h-10 w-10 relative flex-shrink-0">
+                <Image
+                  src={"/futureblink.webp"}
+                  alt="image"
+                  fill
+                  priority={true}
+                  className="object-cover rounded-md"
+                />
+              </div>
+              <div>
+                <h4>FutureBlink</h4>
+                <p className="text-sm">June 2024 - Present</p>
+              </div>
             </div>
-            <div>
-              <h4>FutureBlink</h4>
-              <p className="text-sm">June 2024 - Present</p>
-            </div>
-          </div>
-          <div />
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <h4>Junior Software Engineer</h4>
-              <div className="space-y-3">
-                {responsibilities.map((task) => task)}
+            <div />
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h4>Junior Software Engineer</h4>
+                <div className="space-y-3">
+                  {responsibilities.map((task) => task)}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </motion.div>
-    </motion.section>
+      </BlurFade>
+    </section>
   );
 }

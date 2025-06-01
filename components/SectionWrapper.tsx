@@ -1,24 +1,17 @@
-import { fadeIn } from "@/lib/utils";
-import { motion } from "framer-motion";
-
 export function SectionWrapper({
   children,
   className = "",
-  delay = 0,
 }: {
   children: any;
-  className: string;
-  delay: number;
+  className?: string;
 }) {
   return (
-    <motion.div
-      className={`border-b border-dashed container-padding ${className}`}
-      initial="hidden"
-      animate="visible"
-      variants={fadeIn}
-      transition={{ delay }}
-    >
-      {children}
-    </motion.div>
+    <div className={`border-b border-dashed container-padding`}>
+      <div
+        className={`px-6 lg:px-8 py-8 border-l border-r border-dashed container ${className}`}
+      >
+        {children}
+      </div>
+    </div>
   );
 }

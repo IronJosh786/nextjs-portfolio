@@ -11,8 +11,7 @@ import {
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
-import { motion } from "framer-motion";
-import { linkVariants } from "@/lib/utils";
+import { BlurFade } from "./blur-fade";
 
 function MobileDrawer() {
   const links = [
@@ -39,17 +38,11 @@ function MobileDrawer() {
         </DrawerHeader>
         <DrawerFooter className="flex flex-col gap-4">
           {links.map((link, index) => (
-            <motion.div
-              key={link.href}
-              variants={linkVariants}
-              initial="hidden"
-              animate="visible"
-              custom={index + 1}
-            >
+            <BlurFade delay={0.075 * (index + 1)} key={link.href}>
               <DrawerClose asChild>
                 <Link href={link.href}>{link.label}</Link>
               </DrawerClose>
-            </motion.div>
+            </BlurFade>
           ))}
         </DrawerFooter>
       </DrawerContent>
