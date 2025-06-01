@@ -17,6 +17,7 @@ function SalesBlinkPopoverCard() {
           <div className="flex gap-2 items-center">
             <div className="relative h-10 w-12">
               <Image
+                placeholder="blur"
                 src={"/salesblink.webp"}
                 alt="salesblink image"
                 fill

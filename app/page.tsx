@@ -11,7 +11,7 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
 
       <main className="flex-1">

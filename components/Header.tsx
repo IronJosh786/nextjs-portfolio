@@ -43,7 +43,7 @@ export function Header() {
               </BlurFade>
             ))}
 
-            <BlurFade delay={0.45}>
+            <BlurFade delay={0.525}>
               <ModeToggle />
             </BlurFade>
           </div>
