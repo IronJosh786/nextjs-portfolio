@@ -19,7 +19,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setShowInitalAnimation(false);
-    }, 1000);
+    }, 1250);
   }, []);
 
   return (
