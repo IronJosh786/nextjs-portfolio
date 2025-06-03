@@ -5,14 +5,14 @@ import { BlurFade } from "./blur-fade";
 export function AboutSection() {
   return (
     <section id="about">
-      <BlurFade delay={0.075} inView>
+      <BlurFade delay={0.15} inView>
         <h1 className="mb-6">
           Hi, I&apos;m Faizan
           <br />
           Software Engineer
         </h1>
       </BlurFade>
-      <BlurFade delay={0.15} inView>
+      <BlurFade delay={0.2} inView>
         <p className="mb-8 text-lg">
           Focused on crafting visually stunning, and interactive applications.
           With expertise in frontend and backend technologies, I specialize in
@@ -20,7 +20,7 @@ export function AboutSection() {
           solutions.
         </p>
       </BlurFade>
-      <BlurFade delay={0.225} inView>
+      <BlurFade delay={0.25} inView>
         <div className="flex gap-2 sm:gap-4">
           <Button asChild>
             <Link target="_blank" href={"mailto:faizanejazshaikh@gmail.com"}>

@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
 import { BlurFade } from "./blur-fade";
+import SalesBlink from "@/public/salesblink.webp";
+import FutureBlink from "@/public/futureblink.webp";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 function SalesBlinkPopoverCard() {
@@ -17,8 +19,8 @@ function SalesBlinkPopoverCard() {
           <div className="flex gap-2 items-center">
             <div className="relative h-10 w-12">
               <Image
+                src={SalesBlink}
                 placeholder="blur"
-                src={"/salesblink.webp"}
                 alt="salesblink image"
                 fill
                 priority={true}
@@ -80,6 +82,7 @@ export function ExperienceSection() {
     "JavaScript",
     "Next.js",
     "React.js",
+    "React Native",
     "Expo",
     "Express.js",
     "MongoDB",
@@ -90,16 +93,16 @@ export function ExperienceSection() {
   ];
   return (
     <section id="experience">
-      <BlurFade delay={0.075} inView>
+      <BlurFade delay={0.15} inView>
         <h2 className="mb-8">Work Experience</h2>
       </BlurFade>
-      <BlurFade delay={0.15} inView>
+      <BlurFade delay={0.2} inView>
         <div>
           <div className="grid grid-cols-1 gap-4 md:gap-6 py-12 first:pt-0 last:pb-0 md:grid-cols-[2fr,1fr,4fr]">
             <div className="flex gap-4 h-max items-center">
               <div className="h-10 w-10 relative flex-shrink-0">
                 <Image
-                  src={"/futureblink.webp"}
+                  src={FutureBlink}
                   alt="image"
                   fill
                   priority={true}

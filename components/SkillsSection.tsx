@@ -12,8 +12,8 @@ export function SkillsSection() {
         { name: "TypeScript", category: "Language" },
         { name: "Next.js", category: "Framework" },
         { name: "React", category: "Library" },
-        { name: "Tanstack Query", category: "State" },
-        { name: "Expo", category: "Mobile" },
+        { name: "React Native", category: "Mobile" },
+        { name: "Expo", category: "Framework" },
       ],
     },
     {
@@ -42,7 +42,7 @@ export function SkillsSection() {
 
   return (
     <section id="skills">
-      <BlurFade delay={0.075} inView>
+      <BlurFade delay={0.15} inView>
         <h2 className="mb-8">Skills</h2>
       </BlurFade>
 
@@ -50,7 +50,7 @@ export function SkillsSection() {
         {skillCategories.map((category, index) => (
           <BlurFade
             key={index}
-            delay={0.075 * (index + 2)}
+            delay={0.2}
             inView
             className={`flex ${category.className || ""}`}
           >

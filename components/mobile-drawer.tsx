@@ -38,7 +38,7 @@ function MobileDrawer() {
         </DrawerHeader>
         <DrawerFooter className="flex flex-col gap-4">
           {links.map((link, index) => (
-            <BlurFade delay={0.075 * (index + 1)} key={link.href}>
+            <BlurFade delay={0.1 * (index + 1)} key={link.href}>
               <DrawerClose asChild>
                 <Link href={link.href}>{link.label}</Link>
               </DrawerClose>

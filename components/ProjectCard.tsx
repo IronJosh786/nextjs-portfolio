@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import Image, { StaticImageData } from "next/image";
 import { Code, SquareArrowOutUpRight } from "lucide-react";
 
 export function ProjectCard({
@@ -15,7 +15,7 @@ export function ProjectCard({
 }: {
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData;
   repo: string;
   preview: string;
   techStack: string[];

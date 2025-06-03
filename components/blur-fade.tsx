@@ -55,6 +55,12 @@ export function BlurFade({
       opacity: 1,
       filter: `blur(0px)`,
     },
+    exit: {
+      [direction === "left" || direction === "right" ? "x" : "y"]:
+        direction === "right" || direction === "down" ? offset : -offset,
+      opacity: 0,
+      filter: `blur(${blur})`,
+    },
   };
   const combinedVariants = variant || defaultVariants;
   return (
@@ -62,10 +68,10 @@ export function BlurFade({
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      exit="hidden"
+      exit="exit"
       variants={combinedVariants}
       transition={{
-        delay: 0.4 + delay,
+        delay: 0.04 + delay,
         duration,
         ease: "easeOut",
       }}
