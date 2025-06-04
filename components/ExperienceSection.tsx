@@ -9,10 +9,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 function SalesBlinkPopoverCard() {
   return (
     <Popover>
-      <PopoverTrigger asChild className="px-1 py-0">
-        <span className="text-primary underline underline-offset-2 cursor-pointer">
-          SalesBlink
-        </span>
+      <PopoverTrigger className="px-1 py-0 text-primary underline underline-offset-2 cursor-pointer">
+        SalesBlink
       </PopoverTrigger>
       <PopoverContent>
         <div className="flex flex-col gap-2">
@@ -110,14 +108,14 @@ export function ExperienceSection() {
                 />
               </div>
               <div>
-                <h4>FutureBlink</h4>
+                <h3>FutureBlink</h3>
                 <p className="text-sm">June 2024 - Present</p>
               </div>
             </div>
             <div />
             <div className="space-y-6">
               <div className="space-y-4">
-                <h4>Junior Software Engineer</h4>
+                <h3>Junior Software Engineer</h3>
                 <div className="space-y-3">
                   {responsibilities.map((task) => task)}
                 </div>

@@ -15,17 +15,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-10 bg-background !opacity-95 border-b border-dashed container-padding">
       <div className="px-6 lg:px-8 flex h-16 items-center justify-between border-l border-r border-dashed container">
-        <BlurFade delay={0.9}>
-          <h4>faizan</h4>
+        <BlurFade delay={0.15}>
+          <h3>faizan</h3>
         </BlurFade>
 
         <nav>
           {/* Mobile Navigation */}
           <div className="flex gap-4 md:hidden">
-            <BlurFade delay={0.9}>
+            <BlurFade delay={0.15}>
               <ModeToggle />
             </BlurFade>
-            <BlurFade delay={0.9}>
+            <BlurFade delay={0.15}>
               <MobileDrawer />
             </BlurFade>
           </div>
@@ -33,7 +33,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-4 items-center">
             {navLinks.map((link) => (
-              <BlurFade delay={0.9} key={link.href}>
+              <BlurFade delay={0.15} key={link.href}>
                 <Link
                   href={link.href}
                   className="transition-colors hover:text-primary"
@@ -43,7 +43,7 @@ export function Header() {
               </BlurFade>
             ))}
 
-            <BlurFade delay={0.9}>
+            <BlurFade delay={0.15}>
               <ModeToggle />
             </BlurFade>
           </div>

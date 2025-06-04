@@ -34,7 +34,7 @@ export function ProjectCard({
           src={image}
         />
         <div className="my-4 w-full flex flex-col flex-grow gap-4 text-balance px-2">
-          <h4>{title}</h4>
+          <h3>{title}</h3>
           <p className="flex-grow m-0">{description}</p>
           <div className="flex flex-wrap gap-2">
             {techStack.map((skill) => (

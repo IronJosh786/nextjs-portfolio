@@ -31,7 +31,7 @@ export function Footer() {
         <div className="flex flex-col items-center sm:flex-row justify-between sm:items-center gap-8">
           <div className="text-center sm:text-start">
             <BlurFade delay={0.15} inView>
-              <h4>faizan</h4>
+              <h3>faizan</h3>
               <p className="mt-2 text-sm">
                 © {new Date().getFullYear()} All rights reserved.
               </p>

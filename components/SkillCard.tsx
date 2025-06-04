@@ -17,9 +17,9 @@ export function SkillCard({
           <div className="h-10 w-10 grid place-items-center rounded-md bg-primary text-primary-foreground">
             <Icon className="h-6 w-6" />
           </div>
-          <h4>{title}</h4>
+          <h3>{title}</h3>
         </div>
-        <ul className="space-y-2 text-sm">
+        <div className="space-y-2 text-sm">
           {skills.map(
             (skill: { name: string; category: string }, index: number) => (
               <div
@@ -37,7 +37,7 @@ export function SkillCard({
               </div>
             )
           )}
-        </ul>
+        </div>
       </Card>
     </div>
   );

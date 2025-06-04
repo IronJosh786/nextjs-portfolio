@@ -10,8 +10,8 @@ export const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.25,
-      staggerChildren: 0.25,
+      delayChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
