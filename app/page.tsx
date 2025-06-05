@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { staggerContainer } from "@/lib/utils";
-import { BlurFade } from "@/components/blur-fade";
 import { motion, AnimatePresence } from "framer-motion";
 import { AboutSection } from "@/components/AboutSection";
 import { SkillsSection } from "@/components/SkillsSection";
@@ -14,13 +13,16 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 
 export default function Home() {
-  const [showInitialAnimation, setShowInitialAnimation] = useState(true);
+  const [hasHydrated, setHasHydrated] = useState(false);
+  const [showInitialAnimation, setShowInitialAnimation] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowInitialAnimation(false);
-    }, 1250);
+    setHasHydrated(true);
+    setShowInitialAnimation(true);
   }, []);
+
+  if (!hasHydrated)
+    return <div className="min-h-screen bg-background transition-none" />;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -30,9 +32,12 @@ export default function Home() {
             key="loader"
             className="min-h-screen w-full flex items-center justify-center"
           >
-            <BlurFade delay={0.6} blur="4px">
-              <h1>Faizan Ejaz</h1>
-            </BlurFade>
+            <h1
+              className="initial-loader"
+              onAnimationEnd={() => setShowInitialAnimation(false)}
+            >
+              Faizan Ejaz
+            </h1>
           </motion.div>
         ) : (
           <motion.div

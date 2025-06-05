@@ -176,3 +176,25 @@ body::-webkit-scrollbar {
     0px 1px 4px 0px hsl(var(--border)) inset,
     0px -1px 4px 0px hsl(var(--border)) inset;
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(4px);
+  }
+}
+
+.initial-loader {
+  animation: fadeInUp 1s ease-out 0.75s both;
+}
