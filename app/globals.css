@@ -8,10 +8,6 @@ html {
   scrollbar-width: none;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 body::-webkit-scrollbar {
   display: none;
 }
@@ -56,9 +52,6 @@ body::-webkit-scrollbar {
     --sidebar-accent-foreground: 0 0% 0%;
     --sidebar-border: 223.8136 0.0001% 92.1478%;
     --sidebar-ring: 0 0% 0%;
-    --font-sans: Geist, sans-serif;
-    --font-serif: Georgia, serif;
-    --font-mono: Geist Mono, monospace;
     --radius: 0.5rem;
     --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
     --shadow-xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
@@ -108,9 +101,6 @@ body::-webkit-scrollbar {
     --sidebar-accent-foreground: 223.8136 -172.5242% 100%;
     --sidebar-border: 223.8136 0% 19.8916%;
     --sidebar-ring: 223.8136 0% 64.471%;
-    --font-sans: Geist, sans-serif;
-    --font-serif: Georgia, serif;
-    --font-mono: Geist Mono, monospace;
     --radius: 0.5rem;
     --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
     --shadow-xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
@@ -175,26 +165,4 @@ body::-webkit-scrollbar {
   box-shadow:
     0px 1px 4px 0px hsl(var(--border)) inset,
     0px -1px 4px 0px hsl(var(--border)) inset;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-    filter: blur(4px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(10px);
-    filter: blur(4px);
-  }
-}
-
-.initial-loader {
-  animation: fadeInUp 1s ease-out 0.75s both;
 }

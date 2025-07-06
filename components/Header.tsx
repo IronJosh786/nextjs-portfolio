@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BlurFade } from "./blur-fade";
 import { ModeToggle } from "./mode-toggle";
 import MobileDrawer from "./mobile-drawer";
 
@@ -15,37 +14,37 @@ export function Header() {
   return (
     <header className="sticky top-0 z-10 bg-background !opacity-95 border-b border-dashed container-padding">
       <div className="px-6 lg:px-8 flex h-16 items-center justify-between border-l border-r border-dashed container">
-        <BlurFade delay={0.15}>
+        <div>
           <h3>faizan</h3>
-        </BlurFade>
+        </div>
 
         <nav>
           {/* Mobile Navigation */}
           <div className="flex gap-4 md:hidden">
-            <BlurFade delay={0.15}>
+            <div>
               <ModeToggle />
-            </BlurFade>
-            <BlurFade delay={0.15}>
+            </div>
+            <div>
               <MobileDrawer />
-            </BlurFade>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-4 items-center">
             {navLinks.map((link) => (
-              <BlurFade delay={0.15} key={link.href}>
+              <div key={link.href}>
                 <Link
                   href={link.href}
                   className="transition-colors hover:text-primary"
                 >
                   {link.text}
                 </Link>
-              </BlurFade>
+              </div>
             ))}
 
-            <BlurFade delay={0.15}>
+            <div>
               <ModeToggle />
-            </BlurFade>
+            </div>
           </div>
         </nav>
       </div>

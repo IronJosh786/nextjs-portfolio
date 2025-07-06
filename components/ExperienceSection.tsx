@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
-import { BlurFade } from "./blur-fade";
 import SalesBlink from "@/public/salesblink.webp";
 import FutureBlink from "@/public/futureblink.webp";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
@@ -91,46 +90,42 @@ export function ExperienceSection() {
   ];
   return (
     <section id="experience">
-      <BlurFade delay={0.15} inView>
-        <h2 className="mb-8">Work Experience</h2>
-      </BlurFade>
-      <BlurFade delay={0.2} inView>
-        <div>
-          <div className="grid grid-cols-1 gap-4 md:gap-6 py-12 first:pt-0 last:pb-0 md:grid-cols-[2fr,1fr,4fr]">
-            <div className="flex gap-4 h-max items-center">
-              <div className="h-10 w-10 relative flex-shrink-0">
-                <Image
-                  src={FutureBlink}
-                  alt="image"
-                  fill
-                  priority={true}
-                  className="object-cover rounded-md"
-                />
-              </div>
-              <div>
-                <h3>FutureBlink</h3>
-                <p className="text-sm">June 2024 - Present</p>
-              </div>
+      <h2 className="mb-8">Work Experience</h2>
+      <div>
+        <div className="grid grid-cols-1 gap-4 md:gap-6 py-12 first:pt-0 last:pb-0 md:grid-cols-[2fr,1fr,4fr]">
+          <div className="flex gap-4 h-max items-center">
+            <div className="h-10 w-10 relative flex-shrink-0">
+              <Image
+                src={FutureBlink}
+                alt="image"
+                fill
+                priority={true}
+                className="object-cover rounded-md"
+              />
             </div>
-            <div />
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <h3>Junior Software Engineer</h3>
-                <div className="space-y-3">
-                  {responsibilities.map((task) => task)}
-                </div>
-                <div className="flex gap-2 flex-wrap">
-                  {techStack.map((tech) => (
-                    <Badge variant={"secondary"} key={tech}>
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
+            <div>
+              <h3>FutureBlink</h3>
+              <p className="text-sm">June 2024 - Present</p>
+            </div>
+          </div>
+          <div />
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h3>Junior Software Engineer</h3>
+              <div className="space-y-3">
+                {responsibilities.map((task) => task)}
+              </div>
+              <div className="flex gap-2 flex-wrap">
+                {techStack.map((tech) => (
+                  <Badge variant={"secondary"} key={tech}>
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </BlurFade>
+      </div>
     </section>
   );
 }
