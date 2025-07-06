@@ -1,4 +1,3 @@
-import { BlurFade } from "./blur-fade";
 import { ProjectCard } from "./ProjectCard";
 import QuizMaster from "@/public/quizmaster.webp";
 import SocialSphere from "@/public/socialsphere.webp";
@@ -61,20 +60,15 @@ export function ProjectsSection() {
   ];
   return (
     <section id="projects">
-      <BlurFade delay={0.15} inView>
+      <div>
         <h2 className="mb-8">Projects</h2>
-      </BlurFade>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project, index) => (
-          <BlurFade
-            delay={0.2}
-            inView
-            key={index}
-            className={project.className}
-          >
+          <div key={index} className={project.className}>
             <ProjectCard {...project} />
-          </BlurFade>
+          </div>
         ))}
       </div>
     </section>

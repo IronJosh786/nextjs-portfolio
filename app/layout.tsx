@@ -20,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <link rel="icon" href="/favicon.svg" sizes="any" />
+      <head>
+        <link rel="icon" href="/favicon.svg" sizes="any" />
+      </head>
       <body className={cn(inter.className, "antialiased")}>
         <ThemeProvider
           attribute="class"

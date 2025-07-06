@@ -1,26 +1,22 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { BlurFade } from "./blur-fade";
 
 export function AboutSection() {
   return (
     <section id="about">
-      <BlurFade delay={0.15} inView>
-        <h1 className="mb-6">
-          Hi, I&apos;m Faizan
-          <br />
-          Software Engineer
-        </h1>
-      </BlurFade>
-      <BlurFade delay={0.2} inView>
+      <div className="mb-2 space-y-2">
+        <h1>Hi, I&apos;m Faizan</h1>
+        <h2>Software Engineer</h2>
+      </div>
+      <div>
         <p className="mb-8 text-lg">
           Focused on crafting visually stunning, and interactive applications.
           With expertise in frontend and backend technologies, I specialize in
           seamless user experiences, delivering innovative, full-stack
           solutions.
         </p>
-      </BlurFade>
-      <BlurFade delay={0.25} inView>
+      </div>
+      <div>
         <div className="flex gap-2 sm:gap-4">
           <Button asChild>
             <Link target="_blank" href={"mailto:faizanejazshaikh@gmail.com"}>
@@ -38,7 +34,7 @@ export function AboutSection() {
             </Link>
           </Button>
         </div>
-      </BlurFade>
+      </div>
     </section>
   );
 }
