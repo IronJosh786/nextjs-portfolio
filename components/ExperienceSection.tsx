@@ -47,32 +47,53 @@ function SalesBlinkPopoverCard() {
 export function ExperienceSection() {
   const responsibilities = [
     <div className="text-muted-foreground" key="r1">
-      Engineered a{" "}
+      Led backend scalability for <SalesBlinkPopoverCard /> by implementing{" "}
       <span className="text-foreground font-medium">
-        multi tenant RAG based voice agent
-      </span>{" "}
-      app for Shopify to enhance e-commerce conversions and improve user engagement by providing contextually relevant and real-time responses.
+        distributed locking with atomic MongoDB operations
+      </span>
+      , enabling{" "}
+      <span className="text-foreground font-medium">horizontal scaling</span>{" "}
+      across microservices while preventing duplicate processing and race
+      conditions.
     </div>,
+
+    <div className="text-muted-foreground" key="r2">
+      Drove major <span className="text-foreground font-medium">API performance improvements</span> across SalesBlink by
+      rearchitecting high-traffic endpoints with{" "}
+      <span className="text-foreground font-medium">
+        batched, set-based database operations
+      </span>
+      , increasing throughput by{" "}
+      <span className="text-foreground font-medium">up to 5×</span> and reducing
+      response times by{" "}
+      <span className="text-foreground font-medium">~90%</span>.
+    </div>,
+
     <div className="text-muted-foreground" key="r3">
-      Worked on <SalesBlinkPopoverCard /> including implementing{" "}
-      <span className="text-foreground font-medium">Workspace</span>{" "}
-      functionality for account-level data separation and a comprehensive{" "}
-      <span className="text-foreground font-medium">White Labeling</span>{" "}
-      solution for platform rebranding.
+      Built SalesBlink’s{" "}
+      <span className="text-foreground font-medium">Stripe billing system</span>{" "}
+      for email verification credits, along with{" "}
+      <span className="text-foreground font-medium">Workspaces</span> and{" "}
+      <span className="text-foreground font-medium">White Labeling</span> to
+      support multi-account usage and platform rebranding.
     </div>,
+
     <div className="text-muted-foreground" key="r4">
       Developed a{" "}
       <span className="text-foreground font-medium">
-        cross platform mobile application
+        cross-platform mobile app
       </span>{" "}
-      for SalesBlink that allows users to access, manage, and send emails
-      directly from their mobile devices.
+      for SalesBlink, enabling users to manage accounts and send emails directly
+      from mobile devices.
     </div>,
-    <div className="text-muted-foreground" key="r2">
-      Built a{" "}
-      <span className="text-foreground font-medium">Google Sheets add-on</span>{" "}
-      that streamlines email verification, improving user productivity and data
-      reliability.
+
+    <div className="text-muted-foreground" key="r5">
+      Outside of SalesBlink, I engineered a{" "}
+      <span className="text-foreground font-medium">
+        multi-tenant RAG-based voice agent
+      </span>{" "}
+      for Shopify to drive e-commerce conversions with real-time, context-aware
+      responses.
     </div>,
   ];
   const techStack = [
