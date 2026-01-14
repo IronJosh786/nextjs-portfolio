@@ -49,15 +49,9 @@ export function ExperienceSection() {
     <div className="text-muted-foreground" key="r1">
       Engineered a{" "}
       <span className="text-foreground font-medium">
-        multi-tenant voice agent
+        multi tenant RAG based voice agent
       </span>{" "}
-      platform to enhance user engagement and drive e-commerce conversions.
-    </div>,
-    <div className="text-muted-foreground" key="r2">
-      Built a{" "}
-      <span className="text-foreground font-medium">Google Sheets add-on</span>{" "}
-      that streamlines email verification, improving user productivity and data
-      reliability.
+      app for Shopify to enhance e-commerce conversions and improve user engagement by providing contextually relevant and real-time responses.
     </div>,
     <div className="text-muted-foreground" key="r3">
       Worked on <SalesBlinkPopoverCard /> including implementing{" "}
@@ -72,7 +66,13 @@ export function ExperienceSection() {
         cross platform mobile application
       </span>{" "}
       for SalesBlink that allows users to access, manage, and send emails
-      directly from their inbox.
+      directly from their mobile devices.
+    </div>,
+    <div className="text-muted-foreground" key="r2">
+      Built a{" "}
+      <span className="text-foreground font-medium">Google Sheets add-on</span>{" "}
+      that streamlines email verification, improving user productivity and data
+      reliability.
     </div>,
   ];
   const techStack = [
