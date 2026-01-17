@@ -132,7 +132,7 @@ export function ExperienceSection() {
           <div />
           <div className="space-y-6">
             <div className="space-y-4">
-              <h3>Junior Software Engineer</h3>
+              <h3>Software Engineer</h3>
               <div className="space-y-3">
                 {responsibilities.map((task) => task)}
               </div>
