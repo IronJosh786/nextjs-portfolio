@@ -1,5 +1,4 @@
 import { Card } from "./ui/card";
-import { Badge } from "./ui/badge";
 
 export function SkillCard({
   icon: Icon,
@@ -8,7 +7,7 @@ export function SkillCard({
 }: {
   icon: any;
   title: string;
-  skills: { name: string; category: string }[];
+  skills: { name: string }[];
 }) {
   return (
     <div className="col-span-1 h-full w-full">
@@ -19,9 +18,9 @@ export function SkillCard({
           </div>
           <h3>{title}</h3>
         </div>
-        <div className="space-y-2 text-sm">
+        <div className="flex gap-2 flex-wrap text-sm">
           {skills.map(
-            (skill: { name: string; category: string }, index: number) => (
+            (skill: { name: string; }, index: number) => (
               <div
                 key={index}
                 className="flex items-center gap-3 px-3 py-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
@@ -31,9 +30,6 @@ export function SkillCard({
                     {skill.name}
                   </p>
                 </div>
-                <Badge variant="secondary" className={`text-xs flex-shrink-0`}>
-                  {skill.category}
-                </Badge>
               </div>
             )
           )}

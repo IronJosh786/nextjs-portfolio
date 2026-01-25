@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import Link from "next/link";
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -14,7 +15,7 @@ export function ProjectCard({
   techStack,
 }: {
   title: string;
-  description: string;
+  description: JSX.Element;
   image: StaticImageData;
   repo: string;
   preview: string;
@@ -35,7 +36,9 @@ export function ProjectCard({
         />
         <div className="my-4 w-full flex flex-col flex-grow gap-4 text-balance px-2">
           <h3>{title}</h3>
-          <p className="flex-grow m-0">{description}</p>
+          <div className="flex-grow m-0">
+            {description}
+          </div>
           <div className="flex flex-wrap gap-2">
             {techStack.map((skill) => (
               <Badge key={`${title}-${skill}`} variant={"secondary"}>

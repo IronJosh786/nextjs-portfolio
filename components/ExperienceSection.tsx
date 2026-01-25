@@ -99,10 +99,9 @@ export function ExperienceSection() {
   const techStack = [
     "JavaScript",
     "Next.js",
-    "React.js",
-    "React Native",
-    "Expo",
-    "Express.js",
+    "React",
+    "React Native (Expo)",
+    "Express",
     "MongoDB",
     "PostgreSQL",
     "Redis",

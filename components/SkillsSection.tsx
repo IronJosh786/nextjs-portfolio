@@ -1,40 +1,43 @@
 import { SkillCard } from "./SkillCard";
-import { Server, LaptopMinimal, Wrench } from "lucide-react";
+import { Server, LaptopMinimal, Database } from "lucide-react";
 
 export function SkillsSection() {
   const skillCategories = [
     {
       icon: LaptopMinimal,
-      title: "Frontend",
+      title: "Frameworks & Libraries",
       skills: [
-        { name: "HTML/CSS", category: "Core" },
-        { name: "TypeScript", category: "Language" },
-        { name: "Next.js", category: "Framework" },
-        { name: "React", category: "Library" },
-        { name: "React Native", category: "Mobile" },
-        { name: "Expo", category: "Framework" },
+        { name: "Django" },
+        { name: "Next.js" },
+        { name: "React" },
+        { name: "React Native (Expo)" },
+        { name: "Express" },
+        { name: "Prisma" },
+        { name: "Mongoose" },
       ],
     },
     {
       icon: Server,
-      title: "Backend",
+      title: "Backend & Systems",
       skills: [
-        { name: "Express.js", category: "Framework" },
-        { name: "PostgreSQL, MongoDB", category: "Database" },
-        { name: "Pinecone", category: "Vector Database" },
-        { name: "Prisma, Mongoose", category: "ORM/ODM" },
-        { name: "Redis", category: "Cache" },
+        { name: "REST APIs" },
+        { name: "Microservices" },
+        { name: "Distributed Systems" },
+        { name: "Websockets" },
+        { name: "Stripe" },
       ],
     },
     {
-      icon: Wrench,
-      title: "Tools",
+      icon: Database,
+      title: "Databases & Languages",
       className: "md:col-span-2 lg:col-span-1",
       skills: [
-        { name: "WebSocket", category: "Realtime" },
-        { name: "LangChain", category: "AI" },
-        { name: "Docker", category: "DevOps" },
-        { name: "Zod", category: "Validation" },
+        { name: "PostgreSQL" },
+        { name: "MongoDB" },
+        { name: "Redis" },
+        { name: "Pinecone" },
+        { name: "TypeScript" },
+        { name: "Python" },
       ],
     },
   ];
