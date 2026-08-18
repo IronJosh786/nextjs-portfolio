@@ -47,53 +47,62 @@ function SalesBlinkPopoverCard() {
 export function ExperienceSection() {
   const responsibilities = [
     <div className="text-muted-foreground" key="r1">
-      Led backend scalability for <SalesBlinkPopoverCard /> by implementing{" "}
+      Led <span className="text-foreground font-medium">backend scalability</span>{" "}
+      initiatives for <SalesBlinkPopoverCard /> by implementing{" "}
       <span className="text-foreground font-medium">
-        distributed locking with atomic MongoDB operations
+        distributed locking via atomic MongoDB operations
       </span>
       , enabling{" "}
       <span className="text-foreground font-medium">horizontal scaling</span>{" "}
-      across microservices while preventing duplicate processing and race
-      conditions.
+      across microservices while eliminating race conditions and duplicate
+      processing.
     </div>,
 
     <div className="text-muted-foreground" key="r2">
-      Drove major <span className="text-foreground font-medium">API performance improvements</span> across SalesBlink by
-      rearchitecting high-traffic endpoints with{" "}
+      Drove{" "}
       <span className="text-foreground font-medium">
-        batched, set-based database operations
+        API performance optimizations
+      </span>{" "}
+      by rearchitecting high-traffic endpoints with{" "}
+      <span className="text-foreground font-medium">
+        batched, set-based database queries
       </span>
-      , increasing throughput by{" "}
-      <span className="text-foreground font-medium">up to 5×</span> and reducing
+      , boosting throughput by{" "}
+      <span className="text-foreground font-medium">up to 5x</span> and slashing
       response times by{" "}
-      <span className="text-foreground font-medium">~90%</span>.
+      <span className="text-foreground font-medium">90%</span>.
     </div>,
 
     <div className="text-muted-foreground" key="r3">
-      Built SalesBlink’s{" "}
-      <span className="text-foreground font-medium">Stripe billing system</span>{" "}
-      for email verification credits, along with{" "}
-      <span className="text-foreground font-medium">Workspaces</span> and{" "}
-      <span className="text-foreground font-medium">White Labeling</span> to
-      support multi-account usage and platform rebranding.
+      Architected and deployed a{" "}
+      <span className="text-foreground font-medium">
+        Model Context Protocol (MCP) server
+      </span>
+      , enabling <span className="text-foreground font-medium">AI agents</span>{" "}
+      to interface reliably with internal APIs and powering an{" "}
+      <span className="text-foreground font-medium">
+        automated support AI system
+      </span>{" "}
+      to fetch real-time user context with minimal manual intervention.
     </div>,
 
     <div className="text-muted-foreground" key="r4">
-      Developed a{" "}
+      Optimized the{" "}
       <span className="text-foreground font-medium">
-        cross-platform mobile app
-      </span>{" "}
-      for SalesBlink, enabling users to manage accounts and send emails directly
-      from mobile devices.
+        email response tracking engine
+      </span>
+      , cutting reply detection latency from{" "}
+      <span className="text-foreground font-medium">hours to seconds</span> and
+      significantly improving inbox synchronization throughput.
     </div>,
 
     <div className="text-muted-foreground" key="r5">
-      Outside of SalesBlink, I engineered a{" "}
+      Engineered a{" "}
       <span className="text-foreground font-medium">
-        multi-tenant RAG-based voice agent
+        multi-tenant, RAG-based voice agent
       </span>{" "}
-      for Shopify to drive e-commerce conversions with real-time, context-aware
-      responses.
+      for Shopify merchants to boost e-commerce conversion rates through
+      real-time, context-aware customer interactions.
     </div>,
   ];
   const techStack = [
@@ -107,6 +116,8 @@ export function ExperienceSection() {
     "Redis",
     "Langchain",
     "Pinecone",
+    "Docker",
+    "RabbitMQ"
   ];
   return (
     <section id="experience">
