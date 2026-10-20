@@ -9,9 +9,10 @@ export function ContactSection() {
         <Card className="p-8 md:p-12">
           <h2 className="mb-4">Let&apos;s build something great!</h2>
           <p className="mb-8">
-            I&apos;m always open to new opportunities, collaborations, and
-            connections. Feel free to reach out to ask a question or share your
-            project idea.
+            Open to discussing high-throughput distributed backends, event-driven
+            messaging pipelines, and applied AI systems opportunities. Feel free
+            to reach out to connect or discuss your team&apos;s engineering
+            challenges.
           </p>
           <div>
             <Button asChild>

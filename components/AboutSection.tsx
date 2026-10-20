@@ -5,15 +5,15 @@ export function AboutSection() {
   return (
     <section id="about">
       <div className="mb-2 space-y-2">
-        <h1>Hi, I&apos;m Faizan</h1>
-        <h2>Software Engineer</h2>
+        <h2><strong>Hi, I'm Faizan</strong></h2>
+        <h3>Backend &amp; Applied AI Systems Engineer</h3>
       </div>
       <div>
         <p className="mb-8 text-lg">
-          Focused on crafting visually stunning, and interactive applications.
-          With expertise in frontend and backend technologies, I specialize in
-          seamless user experiences, delivering innovative, full-stack
-          solutions.
+          I build high-throughput distributed backends, event-driven messaging
+          pipelines, and production AI agents. Currently scaling backend
+          infrastructure, OAuth-secured MCP servers, and multi-tenant RAG
+          systems at FutureBlink.
         </p>
       </div>
       <div>

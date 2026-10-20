@@ -50,12 +50,12 @@ export function ExperienceSection() {
       Led <span className="text-foreground font-medium">backend scalability</span>{" "}
       initiatives for <SalesBlinkPopoverCard /> by implementing{" "}
       <span className="text-foreground font-medium">
-        distributed locking via atomic MongoDB operations
+        distributed locking via atomic MongoDB operations with stale-lock recovery
       </span>
       , enabling{" "}
       <span className="text-foreground font-medium">horizontal scaling</span>{" "}
-      across microservices while eliminating race conditions and duplicate
-      processing.
+      across microservices while eliminating race conditions and duplicate email
+      dispatches.
     </div>,
 
     <div className="text-muted-foreground" key="r2">
@@ -63,62 +63,77 @@ export function ExperienceSection() {
       <span className="text-foreground font-medium">
         API performance optimizations
       </span>{" "}
-      by rearchitecting high-traffic endpoints with{" "}
+      by eliminating N+1 queries via{" "}
       <span className="text-foreground font-medium">
-        batched, set-based database queries
+        batched set-based database lookups
       </span>
-      , boosting throughput by{" "}
+      , adding targeted{" "}
+      <span className="text-foreground font-medium">ESR compound indexes</span>,
+      and implementing a bounded in-memory FIFO cache, boosting throughput by{" "}
       <span className="text-foreground font-medium">up to 5x</span> and slashing
       response times by{" "}
       <span className="text-foreground font-medium">90%</span>.
     </div>,
 
     <div className="text-muted-foreground" key="r3">
-      Architected and deployed a{" "}
+      Architected and deployed an{" "}
       <span className="text-foreground font-medium">
-        Model Context Protocol (MCP) server
-      </span>
-      , enabling <span className="text-foreground font-medium">AI agents</span>{" "}
-      to interface reliably with internal APIs and powering an{" "}
-      <span className="text-foreground font-medium">
-        automated support AI system
+        OAuth-secured Model Context Protocol (MCP) server
       </span>{" "}
-      to fetch real-time user context with minimal manual intervention.
+      with strict transport-level token scoping, enabling external AI clients and
+      internal automated support agents to safely query real-time user context and
+      execute scoped actions.
     </div>,
 
     <div className="text-muted-foreground" key="r4">
-      Optimized the{" "}
+      Re-architected the{" "}
       <span className="text-foreground font-medium">
         email response tracking engine
+      </span>{" "}
+      by introducing{" "}
+      <span className="text-foreground font-medium">
+        OAuth mailbox push webhooks
       </span>
-      , cutting reply detection latency from{" "}
-      <span className="text-foreground font-medium">hours to seconds</span> and
-      significantly improving inbox synchronization throughput.
+      ,{" "}
+      <span className="text-foreground font-medium">
+        RabbitMQ message queues
+      </span>
+      , and time-and-size bounded consumer micro-batching alongside tiered
+      SMTP/IMAP polling, cutting reply detection latency from{" "}
+      <span className="text-foreground font-medium">hours to seconds</span>.
     </div>,
 
     <div className="text-muted-foreground" key="r5">
       Engineered a{" "}
       <span className="text-foreground font-medium">
-        multi-tenant, RAG-based voice agent
+        multi-tenant, RAG-based AI voice agent
       </span>{" "}
-      for Shopify merchants to boost e-commerce conversion rates through
-      real-time, context-aware customer interactions.
+      for Shopify merchants using{" "}
+      <span className="text-foreground font-medium">
+        Vapi, Twilio, LangChain, and Pinecone
+      </span>{" "}
+      (with per-merchant namespace isolation), delivering low-latency,
+      context-aware customer support.
     </div>,
   ];
+
   const techStack = [
-    "JavaScript",
-    "Next.js",
-    "React",
-    "React Native (Expo)",
-    "Express",
+    "TypeScript",
+    "Node.js",
     "MongoDB",
+    "RabbitMQ",
+    "Model Context Protocol (MCP)",
     "PostgreSQL",
     "Redis",
-    "Langchain",
     "Pinecone",
+    "LangChain",
+    "Vapi",
+    "Twilio",
+    "Express",
+    "Next.js",
     "Docker",
-    "RabbitMQ"
   ];
+
   return (
     <section id="experience">
       <h2 className="mb-8">Work Experience</h2>
@@ -128,7 +143,7 @@ export function ExperienceSection() {
             <div className="h-10 w-10 relative flex-shrink-0">
               <Image
                 src={FutureBlink}
-                alt="image"
+                alt="FutureBlink logo"
                 fill
                 priority={true}
                 className="object-cover rounded-md"

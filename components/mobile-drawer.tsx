@@ -16,6 +16,7 @@ function MobileDrawer() {
   const links = [
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
+    { label: "Case Studies", href: "#case-studies" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
     { label: "Contact", href: "#contact" },
@@ -36,7 +37,7 @@ function MobileDrawer() {
           <DrawerDescription>Navigate to a section</DrawerDescription>
         </DrawerHeader>
         <DrawerFooter className="flex flex-col gap-4">
-          {links.map((link, index) => (
+          {links.map((link) => (
             <div key={link.href}>
               <DrawerClose asChild>
                 <Link href={link.href}>{link.label}</Link>

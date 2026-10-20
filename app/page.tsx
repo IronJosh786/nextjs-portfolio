@@ -6,6 +6,7 @@ import { SectionWrapper } from "@/components/SectionWrapper";
 import { ContactSection } from "@/components/ContactSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
+import { CaseStudiesSection } from "@/components/CaseStudiesSection";
 
 export default function Home() {
   return (
@@ -22,6 +23,11 @@ export default function Home() {
           {/* Experience Section */}
           <SectionWrapper className="lg:col-span-2" id="experience">
             <ExperienceSection />
+          </SectionWrapper>
+
+          {/* Case Studies Section */}
+          <SectionWrapper id="case-studies">
+            <CaseStudiesSection />
           </SectionWrapper>
 
           {/* Projects Section */}

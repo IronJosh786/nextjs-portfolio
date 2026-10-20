@@ -39,7 +39,7 @@ export function ProjectCard({
           <div className="flex-grow m-0">
             {description}
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 pt-4 border-t border-dashed">
             {techStack.map((skill) => (
               <Badge key={`${title}-${skill}`} variant={"secondary"}>
                 {skill}

@@ -5,6 +5,7 @@ import MobileDrawer from "./mobile-drawer";
 const navLinks = [
   { href: "#about", text: "About" },
   { href: "#experience", text: "Experience" },
+  { href: "#case-studies", text: "Case Studies" },
   { href: "#projects", text: "Projects" },
   { href: "#skills", text: "Skills" },
   { href: "#contact", text: "Contact" },

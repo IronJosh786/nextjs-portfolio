@@ -1,43 +1,59 @@
 import { SkillCard } from "./SkillCard";
-import { Server, LaptopMinimal, Database } from "lucide-react";
+import { Server, Bot, Database, Layers } from "lucide-react";
 
 export function SkillsSection() {
   const skillCategories = [
     {
-      icon: LaptopMinimal,
-      title: "Frameworks & Libraries",
+      icon: Server,
+      title: "Backend & Distributed Systems",
       skills: [
-        { name: "Django" },
-        { name: "Next.js" },
-        { name: "React" },
-        { name: "React Native (Expo)" },
-        { name: "Express" },
-        { name: "Prisma" },
-        { name: "Mongoose" },
+        { name: "Node.js" },
+        { name: "Microservices" },
+        { name: "RabbitMQ" },
+        { name: "Distributed Locking" },
+        { name: "REST APIs" },
+        { name: "WebSockets" },
+        { name: "OAuth 2.0" },
+        { name: "Stripe" },
       ],
     },
     {
-      icon: Server,
-      title: "Backend & Systems",
+      icon: Bot,
+      title: "AI & Agent Infrastructure",
       skills: [
-        { name: "REST APIs" },
-        { name: "Microservices" },
-        { name: "Distributed Systems" },
-        { name: "Websockets" },
-        { name: "Stripe" },
+        { name: "Model Context Protocol (MCP)" },
+        { name: "RAG" },
+        { name: "LangChain" },
+        { name: "Pinecone" },
+        { name: "Vapi" },
+        { name: "Twilio" },
+        { name: "Google Gemini API" },
       ],
     },
     {
       icon: Database,
       title: "Databases & Languages",
-      className: "md:col-span-2 lg:col-span-1",
       skills: [
-        { name: "PostgreSQL" },
-        { name: "MongoDB" },
-        { name: "Redis" },
-        { name: "Pinecone" },
         { name: "TypeScript" },
         { name: "Python" },
+        { name: "C++" },
+        { name: "MongoDB" },
+        { name: "PostgreSQL" },
+        { name: "Redis" },
+      ],
+    },
+    {
+      icon: Layers,
+      title: "Frameworks & DevOps",
+      skills: [
+        { name: "Express" },
+        { name: "Next.js" },
+        { name: "Django" },
+        { name: "Prisma" },
+        { name: "Mongoose" },
+        { name: "React" },
+        { name: "Docker" },
+        { name: "Git" },
       ],
     },
   ];
@@ -48,9 +64,9 @@ export function SkillsSection() {
         <h2 className="mb-8">Skills</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {skillCategories.map((category, index) => (
-          <div key={index} className={`flex ${category.className || ""}`}>
+          <div key={index} className="flex">
             <SkillCard {...category} />
           </div>
         ))}
