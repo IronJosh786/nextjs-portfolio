@@ -22,14 +22,15 @@ export function CaseStudyCard({
   className,
 }: CaseStudyProps) {
   return (
-    <Card className={cn("flex h-full flex-col p-6", className)}>
-      <div className="flex items-center justify-between gap-2 mb-4">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            {category}
-          </span>
-        </div>
-        <Badge variant="outline" className="font-mono text-xs">
+    <Card className={cn("flex h-full flex-col p-5 sm:p-6", className)}>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+          {category}
+        </span>
+        <Badge
+          variant="outline"
+          className="font-mono text-xs w-fit whitespace-nowrap self-start sm:self-auto"
+        >
           {patternBadge}
         </Badge>
       </div>
